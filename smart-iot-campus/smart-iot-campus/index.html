@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart IoT Campus Solution</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-microchip"></i>
+                <h1>Smart IoT Campus</h1>
+            </div>
+            <nav class="nav">
+                <a href="#dashboard" class="nav-link">Dashboard</a>
+                <a href="#energy" class="nav-link">Energy</a>
+                <a href="#rooms" class="nav-link">Rooms</a>
+                <a href="#security" class="nav-link">Security</a>
+                <a href="#analytics" class="nav-link">Analytics</a>
+                <a href="#ai-insights" class="nav-link">AI Insights</a>
+            </nav>
+            <div class="user-menu">
+                <button id="login-btn" class="btn btn-primary">Login</button>
+                <div id="user-profile" class="user-profile hidden">
+                    <span id="user-name">Admin</span>
+                    <button id="logout-btn" class="btn btn-secondary">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section id="dashboard" class="section">
+            <div class="container">
+                <h2>Campus Dashboard</h2>
+                <div class="stats-grid">
+                    <div class="stat-card interactive" data-stat="people">
+                        <div class="stat-icon">
+                            <i class="fas fa-users live-indicator"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="total-people">0</h3>
+                            <p>People on Campus</p>
+                        </div>
+                    </div>
+                    <div class="stat-card interactive" data-stat="energy">
+                        <div class="stat-icon">
+                            <i class="fas fa-bolt live-indicator"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="energy-usage">0 kWh</h3>
+                            <p>Energy Usage</p>
+                        </div>
+                    </div>
+                    <div class="stat-card interactive" data-stat="temperature">
+                        <div class="stat-icon">
+                            <i class="fas fa-temperature-high live-indicator"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="avg-temp">0°C</h3>
+                            <p>Average Temperature</p>
+                        </div>
+                    </div>
+                    <div class="stat-card interactive" data-stat="security">
+                        <div class="stat-icon">
+                            <i class="fas fa-shield-alt live-indicator"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="security-status">Secure</h3>
+                            <p>Security Status</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="energy" class="section">
+            <div class="container">
+                <h2>Energy Management</h2>
+                <div class="energy-grid">
+                    <div class="energy-card interactive" data-building="building-a">
+                        <h3>Building A</h3>
+                        <div class="energy-meter">
+                            <div class="meter-fill" id="building-a-meter"></div>
+                        </div>
+                        <p id="building-a-usage">0 kWh</p>
+                    </div>
+                    <div class="energy-card interactive" data-building="building-b">
+                        <h3>Building B</h3>
+                        <div class="energy-meter">
+                            <div class="meter-fill" id="building-b-meter"></div>
+                        </div>
+                        <p id="building-b-usage">0 kWh</p>
+                    </div>
+                    <div class="energy-card interactive" data-building="library">
+                        <h3>Library</h3>
+                        <div class="energy-meter">
+                            <div class="meter-fill" id="library-meter"></div>
+                        </div>
+                        <p id="library-usage">0 kWh</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="rooms" class="section">
+            <div class="container">
+                <h2>Smart Room Management</h2>
+                <div class="room-controls">
+                    <div class="control-panel interactive" data-room="room101">
+                        <h3>Room 101 - Lecture Hall</h3>
+                        <div class="controls">
+                            <button class="control-btn" onclick="toggleLight('room101')" data-device="lights">
+                                <i class="fas fa-lightbulb"></i> Lights
+                            </button>
+                            <button class="control-btn" onclick="toggleAC('room101')" data-device="ac">
+                                <i class="fas fa-snowflake"></i> AC
+                            </button>
+                            <button class="control-btn" onclick="toggleProjector('room101')" data-device="projector">
+                                <i class="fas fa-video"></i> Projector
+                            </button>
+                        </div>
+                        <div class="room-status">
+                            <span class="status-indicator" id="room101-status">Available</span>
+                            <span class="occupancy" id="room101-occupancy">0/50</span>
+                        </div>
+                    </div>
+                    <div class="control-panel interactive" data-room="room202">
+                        <h3>Room 202 - Lab</h3>
+                        <div class="controls">
+                            <button class="control-btn" onclick="toggleLight('room202')" data-device="lights">
+                                <i class="fas fa-lightbulb"></i> Lights
+                            </button>
+                            <button class="control-btn" onclick="toggleAC('room202')" data-device="ac">
+                                <i class="fas fa-snowflake"></i> AC
+                            </button>
+                            <button class="control-btn" onclick="toggleEquipment('room202')" data-device="equipment">
+                                <i class="fas fa-flask"></i> Equipment
+                            </button>
+                        </div>
+                        <div class="room-status">
+                            <span class="status-indicator" id="room202-status">Available</span>
+                            <span class="occupancy" id="room202-occupancy">0/30</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="security" class="section">
+            <div class="container">
+                <h2>Security Monitoring</h2>
+                <div class="security-grid">
+                    <div class="security-card interactive" data-section="access">
+                        <h3>Access Control</h3>
+                        <div class="access-log" id="access-log">
+                            <div class="log-entry">
+                                <span class="time">10:30 AM</span>
+                                <span class="person">John Doe</span>
+                                <span class="action">Entered Main Gate</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="security-card interactive" data-section="cameras">
+                        <h3>Camera Status</h3>
+                        <div class="camera-status">
+                            <div class="camera-item interactive" data-camera="main-entrance">
+                                <i class="fas fa-video"></i>
+                                <span>Main Entrance</span>
+                                <span class="status online">Online</span>
+                            </div>
+                            <div class="camera-item interactive" data-camera="parking-lot">
+                                <i class="fas fa-video"></i>
+                                <span>Parking Lot</span>
+                                <span class="status online">Online</span>
+                            </div>
+                            <div class="camera-item interactive" data-camera="library">
+                                <i class="fas fa-video"></i>
+                                <span>Library</span>
+                                <span class="status offline">Offline</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-insights" class="section">
+            <div class="container">
+                <h2>AI Insights & Recommendations</h2>
+                <div class="ai-grid">
+                    <div class="ai-card interactive" data-ai="energy">
+                        <h3><i class="fas fa-lightbulb"></i> Energy Optimization</h3>
+                        <div id="energy-recommendations" class="recommendations">
+                            <div class="recommendation-item">
+                                <span class="priority high">High Priority</span>
+                                <p>Building A AC usage 23% above optimal - consider adjusting thermostat by 2°C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ai-card interactive" data-ai="prediction">
+                        <h3><i class="fas fa-chart-line"></i> Predictive Analytics</h3>
+                        <div class="prediction">
+                            <h4>Tomorrow's Energy Forecast</h4>
+                            <div class="forecast-value">
+                                <span id="energy-forecast">847 kWh</span>
+                                <small>±5% confidence</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ai-card interactive" data-ai="anomaly">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Anomaly Detection</h3>
+                        <div id="anomaly-alerts" class="alerts">
+                            <div class="alert-item warning">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <span>Unusual energy spike detected in Library - 2:30 AM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="alerts" class="section">
+            <div class="container">
+                <h2>Real-time Alerts</h2>
+                <div class="alerts-container">
+                    <div class="alert-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="critical">Critical</button>
+                        <button class="filter-btn" data-filter="warning">Warning</button>
+                        <button class="filter-btn" data-filter="info">Info</button>
+                    </div>
+                    <div id="alerts-list" class="alerts-list">
+                        <!-- Alerts will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="analytics" class="section">
+            <div class="container">
+                <h2>Analytics & Insights</h2>
+                <div class="analytics-controls">
+                    <div class="time-range-selector">
+                        <button class="btn btn-secondary" onclick="changeTimeRange('day')">Day</button>
+                        <button class="btn btn-secondary" onclick="changeTimeRange('week')">Week</button>
+                        <button class="btn btn-secondary" onclick="changeTimeRange('month')">Month</button>
+                        <button class="btn btn-secondary" onclick="changeTimeRange('year')">Year</button>
+                    </div>
+                    <div class="chart-type-selector">
+                        <button class="btn btn-secondary" onclick="switchChartType('line')">Line</button>
+                        <button class="btn btn-secondary" onclick="switchChartType('bar')">Bar</button>
+                        <button class="btn btn-secondary" onclick="switchChartType('doughnut')">Doughnut</button>
+                        <button class="btn btn-secondary" onclick="switchChartType('radar')">Radar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Smart IoT Campus Solution. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login to Smart Campus</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select id="role">
+                        <option value="admin">Administrator</option>
+                        <option value="staff">Staff</option>
+                        <option value="student">Student</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Alert Notification Container -->
+    <div id="notification-container" class="notification-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="user-preferences.js"></script>
+    <script src="advanced-charts.js"></script>
+    <script src="export-system.js"></script>
+    <script src="performance-optimizer.js"></script>
+    <script src="advanced-alerts.js"></script>
+    <script src="advanced-security.js"></script>
+    <script src="smart-room-management.js"></script>
+    <script src="data-fix.js"></script>
+    <script src="chart-fix.js"></script>
+    <script src="auth.js"></script>
+    <script src="storage.js"></script>
+    <script src="ai-engine.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

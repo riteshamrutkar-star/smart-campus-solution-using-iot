@@ -1,0 +1,33 @@
+{
+  "name": "Smart IoT Campus",
+  "short_name": "SmartCampus",
+  "description": "Advanced IoT-based campus management system with AI insights",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiBmaWxsPSIjMjU2M2ViIi8+CjxwYXRoIGQ9Ik05NiA0OEM4NC45NTQzIDQ4IDc2IDU2Ljk1NDMgNzYgNjhWODRINjhDNTYuOTU0MyA4NCA0OCA5Mi45NTQzIDQ4IDEwNFYxMjRDNDggMTM1LjA0NiA1Ni45NTQzIDE0NCA2OCAxNDRIMTI0QzEzNS4wNDYgMTQ0IDE0NCAxMzUuMDQ2IDE0NCAxMjRWMTA0QzE0NCA5Mi45NTQzIDEzNS4wNDYgODQgMTI0IDg0SDExNlY2OEMxMTYgNTYuOTU0MyAxMDcuMDQ2IDQ4IDk2IDQ4WiIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iODAiIGN5PSI5NiIgcj0iOCIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iMTEyIiBjeT0iOTYiIHI9IjgiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik04MCAxMjBWMTI4SDExMlYxMjBIODBWMTI2WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiBmaWxsPSIjMjU2M2ViIi8+CjxwYXRoIGQ9Ik0yNTYgMTI4QzIyNy44OSAxMjggMjA0IDE1MS44OSAyMDQgMTgwVjIyNEgxODBDMTUxLjg5IDIyNCAxMjggMjQ3Ljg5IDEyOCAyNzZWMzMwQzEyOCAzNTguMTEgMTUxLjg5IDM4MiAxODAgMzgySDMzMkMzNjAuMTEgMzgyIDM4NCAzNTguMTEgMzg0IDMzMlYyNzZDMzg0IDI0Ny44OSAzNjAuMTEgMjI0IDMzMiAyMjRIMzA4VjE4MEMzMDggMTUxLjg5IDI4NC4xMSAxMjggMjU2IDEyOFoiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjIxNiIgY3k9IjI1NiIgcj0iMjEiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjI5NiIgY3k9IjI1NiIgcj0iMjEiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yMTYgMzM2VjM1NkgyOTZWMzM2SDIxNlYzMzRaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4=",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["productivity", "utilities", "education"],
+  "lang": "en",
+  "scope": "/",
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI3MjAiIHZpZXdCb3g9IjAgMCAxMjgwIDcyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEyODAiIGhlaWdodD0iNzIwIiBmaWxsPSIjZjlmYWZiIi8+CjxyZWN0IHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjMWYyOTM3Ii8+Cjx0ZXh0IHg9IjY0MCIgeT0iNDUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlNtYXJ0IElvVCBDYW1wdXMgRGFzaGJvYXJkPC90ZXh0Pgo8L3N2Zz4=",
+      "sizes": "1280x720",
+      "type": "image/svg+xml",
+      "form_factor": "wide"
+    }
+  ]
+}
